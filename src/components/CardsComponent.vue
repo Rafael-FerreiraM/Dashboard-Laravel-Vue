@@ -15,7 +15,7 @@
           </div>
           <div class="content">
             <i class="fa fa-users fa-3x"></i>
-            <p class="qtd">9570</p>
+            <p>{{ clientsCount }}</p> <!-- Corrigido para clientsCount -->
           </div>
         </div>
 
@@ -27,7 +27,7 @@
           </div>
           <div class="content">
             <i class="fa fa-box fa-3x"></i>
-            <p class="qtd">1245</p>
+            <p>{{ productsCount }}</p> <!-- Corrigido para productsCount -->
           </div>
         </div>
       </div>
@@ -38,11 +38,11 @@
         <div class="my_card">
           <div class="content">
             <h3>Vendas</h3>
-            <p class="percentage"><i class="fa fa-arrow-up fa-lg"></i> <span class="green">10%</span></p>
+            <p class="percentage"><i class="fa fa-arrow-up fa-lg"></i> <span class="green">22% </span></p>
           </div>
           <div class="content">
-            <i class="fa fa-store fa-3x"></i>
-            <p class="qtd">8500</p>
+            <i class="fa fa-store fa-3x"></i> 
+            <p class="qtd">122</p>
           </div>
         </div>
 
@@ -64,7 +64,14 @@
 
 <script>
 export default {
-    
+  name: 'CardsComponent',
+  props: {
+    clientsCount: Number, 
+    productsCount: Number, 
+    percentage: String,
+    icon: String,
+    qtd: Number,
+  }
 }
 </script>
 
@@ -132,8 +139,7 @@ export default {
 
 .my_card .qtd {
   font-size: 24px; 
-
-  }
+}
 
 .my_card i {
   font-size: 3rem; /* Tamanho do ícone */

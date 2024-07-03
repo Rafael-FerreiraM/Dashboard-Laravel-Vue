@@ -20,9 +20,10 @@
             <div class="menu">
                 <ul>
                     <li><router-link :to="{name: 'Home'}"><i class="fa fa-home"></i> Início</router-link></li>
-                    <li><router-link :to="{name: 'Produtos'}"><i class="fa fa-box"></i> Produtos</router-link></li>
-                    <li><router-link :to="{name: 'Home'}"><i class="fa fa-store"></i> Vendas</router-link></li>
-                    <li><router-link :to="{name: 'Home'}"><i class="fa fa-chart-bar"></i> Relatórios</router-link></li>
+                    <li><router-link :to="{name: 'Clientes'}"><i class="fa fa-users"></i> Clientes</router-link></li>
+                    <li><router-link :to="{name: 'Clientes'}"><i class="fa fa-box"></i> Produtos</router-link></li>
+                    <li><router-link :to="{name: 'Clientes'}"><i class="fa fa-store"></i> Vendas</router-link></li>
+                    <li><router-link :to="{name: 'Clientes'}"><i class="fa fa-chart-bar"></i> Relatórios</router-link></li>
                 </ul>
             </div>
         </div>

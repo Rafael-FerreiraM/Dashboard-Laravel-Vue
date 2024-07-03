@@ -15,27 +15,28 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="user in data" :key="user.id">
-            <th scope="row">{{ user.id }}</th>
-            <td><p class="users">{{ user.name }}</p></td>
-            <td><p class="users">{{ user.email }}</p></td>
+          <tr v-for="item in data" :key="item.id">
+            <th scope="row">{{ item.id }}</th>
+            <td><p class="users">{{ item.name }}</p></td>
+            <td><p class="users">{{ (description == 'Clientes') ? item.email : item.value }}</p></td>
           </tr>
         </tbody>
       </table>
+    
     </div>
   </div>
 </template>
-
 <script>
 export default {
   name: 'ListsComponent',
   props: {
     data: Array,
     description: String,
-    columns: Array,
+    columns: Array, 
   }
 }
 </script>
+
 
 <style scoped>
 .lists {

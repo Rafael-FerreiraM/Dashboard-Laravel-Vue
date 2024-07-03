@@ -3,12 +3,12 @@
     <template v-slot:slot-pages>
       <div class="content-pages">
         <header class="title_pages">
-          
+       
         </header>
         <CardsComponent />
         <div class="lists-container">
-          <ListsComponent :data="users" :description="'Clientes'" :columns="['Nome', 'E-mail']" />
-          <ListsComponent :data="users" :description="'Produtos'" :columns="['Nome', 'Valor']" />
+          <ListsComponent :data="clients" :description="'Clientes'" :columns="['Nome', 'E-mail']" />
+          <ListsComponent :data="products" :description="'Produtos'" :columns="['Nome', 'Valor']" />
         </div>
       </div>
     </template>
@@ -25,7 +25,8 @@ export default {
   name: 'HomeComponent',
   data() {
     return {
-      users: []
+      clients: [],
+      products: [],
     };
   },
   mounted() {
@@ -34,18 +35,20 @@ export default {
   methods: {
     async getUsers() {
       try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+        const response = await axios.get('/home'); 
+
         if (response.status === 200) {
-          this.users = response.data;
+          this.clients = response.data.clients;
+          this.products = response.data.products;
         } else {
           console.log('Ocorreu um erro na API');
         }
       } catch (error) {
-        console.error('Erro ao buscar usuários:', error);
+        console.error('Erro ao carregar dados:', error);
       }
     }
   },
-  components: { 
+  components: {
     DashboardComponent,
     CardsComponent,
     ListsComponent
@@ -55,7 +58,6 @@ export default {
 
 <style lang="scss" scoped>
 @import './style.scss';
-
 
 .content-pages {
   display: flex;
