@@ -19,9 +19,7 @@ Composer instalado para gerenciar as dependências do Laravel.
 
 MySQL e servidor Apache configurado.
 ## Configuração e Instalação
-1. Baixe ou clone o repostitório com:
-
- `git clone https://github.com/Rafael-FerreiraM/dashboard-laravel-vue`
+1. Baixe ou clone o repostitório com: `git clone https://github.com/Rafael-FerreiraM/dashboard-laravel-vue`
 
  2. Vá ate a pasta do projeto:
 
